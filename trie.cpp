@@ -114,7 +114,7 @@ std::string Trie::autocomplete(const std::string& pref) const
 			return "";
 		}
 
-		return foundedWords[choice-1];
+		return std::move(foundedWords[choice-1]);
 	}
 
 	return "";
