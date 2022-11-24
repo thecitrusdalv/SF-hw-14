@@ -12,6 +12,8 @@ Trie::Trie(const std::string &path) //Инициализация дерева с
 	std::string newWord;
 	while (file >> newWord)
 		insert(newWord);
+
+	file.close();
 }
 
 Trie::TrieNode* Trie::getNewNode() const
@@ -101,9 +103,9 @@ std::string Trie::autocomplete(const std::string& pref) const
 		for (size_t i = 0; i < foundedWords.size(); i++) {
 			std::cout << "\t(" << i+1 << ") " << pref <<  foundedWords[i] << std::endl;
 		}
+		std::cout << "\t(0) - cancel: ";
 
 		unsigned int choice; //Переменная для выбора
-		std::cout << "\t(0) - cancel: ";
 		std::cin >> choice;
 
 		if (!choice)

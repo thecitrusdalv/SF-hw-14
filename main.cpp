@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <exception>
+
 #include "trie.h"
 #include "func.h"
 
@@ -13,6 +15,11 @@ int main()
 		//Передача в ф-ию словаря и строки для ввода
 		inputReq(dictionary, input);
 	}
+
+	catch (const std::exception &ex) {
+		std::cout << ex.what() << std::endl;
+	}
+	
 	catch (const char* err) {
 		std::cout << err << std::endl;
 	}
