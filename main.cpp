@@ -17,11 +17,11 @@ int main()
 	}
 
 	catch (const std::exception &ex) {
-		std::cout << ex.what() << std::endl;
+		std::cerr << ex.what() << std::endl;
 	}
 	
 	catch (const char* err) {
-		std::cout << err << std::endl;
+		std::cerr << err << std::endl;
 	}
 
 	catch (...) {
